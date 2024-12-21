@@ -1,0 +1,7 @@
+site_name: FalconLink Extensions
+nav:
+  - Home: index.md
+  - Getting Started: gettingstarted.md
+  - Docs: docs.md
+  - GitHub: https://github.com/Falconlink/FalconLink
+  - Discord: https://discord.gg/TSp7qKf4wY
