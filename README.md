@@ -1,1 +1,1 @@
-Documentation for [FalconLink](https://github.com/Falconlink/FalconLink) extensions.
+Documentation for [FalconLink](https://github.com/Falconlink/FalconLink) browser extensions.
