@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>Docs - FalconLink Extensions</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">FalconLink Extensions</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href=".." class="nav-link">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../gettingstarted/" class="nav-link">Getting Started</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="./" class="nav-link active" aria-current="page">Docs</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/Falconlink/FalconLink" class="nav-link">GitHub</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://discord.gg/TSp7qKf4wY" class="nav-link">Discord</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../gettingstarted/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#falconlink-extensions-documentation" class="nav-link">FalconLink Extensions Documentation</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#interacting-with-the-api" class="nav-link">Interacting with the API</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#tab-objects" class="nav-link">Tab objects</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#await-apigetcurrenttab" class="nav-link">await API.getCurrentTab()</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#await-apigetalltabs" class="nav-link">await API.getAllTabs()</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#await-apigettabbyidid" class="nav-link">await API.getTabByID(id)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#injecting-scripts" class="nav-link">Injecting Scripts</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#await-apiinjectscriptscript-tabid-inline" class="nav-link">await API.injectScript(script, tabID, inline)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#await-apiisscriptinjectedscript-tabid-inline" class="nav-link">await API.isScriptInjected(script, tabID, inline)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#misc-functions" class="nav-link">Misc. Functions</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#await-apigetsrcforpath" class="nav-link">await API.getSrcFor(Path)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#await-apigetwindowbyidid" class="nav-link">await API.getWindowByID(ID)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#await-apicreatetaburl-proxy" class="nav-link">await API.createTab(url, proxy)</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#messaging" class="nav-link">Messaging</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#creating-a-message-channel" class="nav-link">Creating a Message Channel</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="falconlink-extensions-documentation">FalconLink Extensions Documentation</h1>
+<h2 id="interacting-with-the-api">Interacting with the API</h2>
+<p>In the main script, you can access the API via the API object. This object will contain all the functions you need to interact with the proxy. Pay close attention to how each API function is used, most of the functions are asynchronous meaning you have to use "await".</p>
+<h1 id="tab-objects">Tab objects</h1>
+<p>The API has multiple functions that return Tab objects. Here is the structure of a Tab Object:</p>
+<pre><code>{
+    "url": "https://google.com", //Current URL of the tab
+    "title": "Google Search", //Current title of the tab
+    "id": "123321" //Unique ID assigned to every proxy tab
+}
+</code></pre>
+<p>Here are the API functions that return tab objects (Note that all of them are asynchronous):</p>
+<h2 id="await-apigetcurrenttab">await API.getCurrentTab()</h2>
+<h5 id="arguments-none">Arguments: None</h5>
+<h5 id="return-value-tab-object">Return value: Tab Object</h5>
+<p>This function will return a promise that resolves to the tab object of the tab the user is currently on.</p>
+<h2 id="await-apigetalltabs">await API.getAllTabs()</h2>
+<h5 id="arguments-none_1">Arguments: None</h5>
+<h5 id="return-value-array-of-tab-objects">Return value: Array of Tab Objects</h5>
+<p>This function will return a promise that resolves to an array of all the tab objects.</p>
+<h2 id="await-apigettabbyidid">await API.getTabByID(id)</h2>
+<h5 id="arguments-id">Arguments: ID</h5>
+<h5 id="return-value-tab-object_1">Return value: Tab Object</h5>
+<p>This function will return a promise that resolves to the tab object of the tab ID given.</p>
+<h1 id="injecting-scripts">Injecting Scripts</h1>
+<h2 id="await-apiinjectscriptscript-tabid-inline">await API.injectScript(script, tabID, inline)</h2>
+<h5 id="arguments-script-tabid-inline-optional-defaults-to-false">Arguments: Script, TabID, Inline (optional, defaults to false)</h5>
+<ul>
+<li>Script is either a URL to a javascript file or javascript code. If it is javascript code, the inline argument must be set to true, if not the inline argument is not neccesary.</li>
+<li>TabID is the ID of the tab you want to inject this script into.</li>
+<li>NOTE: If using a JavaScript file that is part of your extensions source code, you can use the <a href="#await-apigetsrcforpath">API.getSrcFor</a> function to generate a URL for the file.</li>
+</ul>
+<h5 id="return-value-boolean">Return value: Boolean</h5>
+<p>Will return true if the script was successfully injected.</p>
+<p>This function will inject a script element in the end of the tabs body. It returns a promise that resolves to true if the injection was successful.</p>
+<h2 id="await-apiisscriptinjectedscript-tabid-inline">await API.isScriptInjected(script, tabID, inline)</h2>
+<h5 id="arguments-script-tabid-inline-optional-defaults-to-false_1">Arguments: Script, TabID, Inline (optional, defaults to false)</h5>
+<ul>
+<li>Script is either a URL to a javascript file or javascript code. If it is javascript code, the inline argument must be set to true, if not the inline argument is not neccesary.</li>
+<li>TabID is the ID of the tab you want to inject this script into.</li>
+<li>NOTE: If using a JavaScript file that is part of your extensions source code, you can use the <a href="#await-apigetsrcforpath">API.getSrcFor</a> function to generate a URL for the file.</li>
+</ul>
+<h5 id="return-value-boolean_1">Return value: Boolean</h5>
+<p>Will return true if the script is injected or false if it is not.</p>
+<p>This function will check if the provided script has already been injected. It returns a promise that resolves to a boolean.</p>
+<h1 id="misc-functions">Misc. Functions</h1>
+<h2 id="await-apigetsrcforpath">await API.getSrcFor(Path)</h2>
+<h5 id="arguments-path">Arguments: Path</h5>
+<h5 id="return-value-url">Return value: URL</h5>
+<p>This function takes a file path (ex: "/scripts/content_script.js") that is relative to your extension and returns a promise that resolves to a URL that that file can be accessed at. This is usefull for things like opening an extension page or injecting a script.</p>
+<h2 id="await-apigetwindowbyidid">await API.getWindowByID(ID)</h2>
+<h5 id="arguments-id_1">Arguments: ID</h5>
+<h5 id="return-value-window">Return value: Window</h5>
+<p>This function takes a <a href="#tab-objects">Tab ID</a> and returns a promise that resolves to the window object of that tab.</p>
+<h2 id="await-apicreatetaburl-proxy">await API.createTab(url, proxy)</h2>
+<h5 id="arguments-url-proxy-optional-defaults-to-true">Arguments: URL, Proxy (Optional, defaults to true)</h5>
+<ul>
+<li>URL is the URL of the page you want to open.</li>
+<li>Proxy is a boolean that specifies if you want the page to be proxied. In most cases, this should be left at true.</li>
+</ul>
+<h5 id="return-value-tab-id">Return value: Tab ID</h5>
+<p>This function takes the URL of the page you want to open and if you want it proxied or not, and returns a promise that resolves to the Tab ID of the new tab.</p>
+<h1 id="messaging">Messaging</h1>
+<p>Messaging allows communication between the main script, and content scripts. Messaging Channels are created by the content scripts, and once made can have messages sent both ways.</p>
+<h2 id="creating-a-message-channel">Creating a Message Channel</h2>
+<p>To create a message channel, create a new instance of the ExtensionMessageChannel class inside of a content script.</p>
+<pre><code>const myMessageChannel = new ExtensionMessageChannel();
+</code></pre>
+<h5 id="important-message-channels-can-only-be-created-in-injected-content-scripts-if-you-create-a-message-channel-in-for-example-a-buttons-onclick-attribute-it-will-not-work"><b>IMPORTANT: Message Channels can only be created in injected content scripts. If you create a message channel in for example, a buttons onclick attribute, it will not work.</b></h5>
+<p>This will create a channel. Now to recieve messages that are sent in a channel inside the main script, set API.onMessageChannelCreate</p>
+<pre><code>//Show any messages recieved to the user.
+API.onMessageChannelCreate = (channel) =&gt; {
+    channel.onMessage = (message) =&gt; {
+        alert("We have a message!!!: " + message);
+    };
+}
+</code></pre>
+<p>Now you can send messages.</p>
+<p>content_script.js:</p>
+<pre><code>myMessageChannel.sendMessage("testing123");
+</code></pre>
+<p>And it should make a popup box saying "We have a message!!!: testing123" appear.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
