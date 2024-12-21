@@ -149,6 +149,11 @@
             </li>
               </ul>
             </li>
+            
+            <li class="nav-item" data-bs-level="1"><a href="#extension-icon-clicked" class="nav-link">Extension Icon Clicked</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
         </ul>
     </div>
 </div></div>
@@ -235,7 +240,13 @@ API.onMessageChannelCreate = (channel) =&gt; {
 <p>content_script.js:</p>
 <pre><code>myMessageChannel.sendMessage("testing123");
 </code></pre>
-<p>And it should make a popup box saying "We have a message!!!: testing123" appear.</p></div>
+<p>And it should make a popup box saying "We have a message!!!: testing123" appear.</p>
+<h1 id="extension-icon-clicked">Extension Icon Clicked</h1>
+<p>When the extension icon is clicked, the API.onIconClicked function will be run. You can use something like this to execute code when the icon is clicked:
+```js
+API.onIconClicked = () =&gt; {
+    alert("Extension icon clicked!");
+}</p></div>
             </div>
         </div>
 
